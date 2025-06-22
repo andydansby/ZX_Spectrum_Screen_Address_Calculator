@@ -1,0 +1,7 @@
+c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\bin\Debug\ZX Spectrum Screen Address Calculator.exe
+c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\bin\Debug\ZX Spectrum Screen Address Calculator.pdb
+c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Debug\ZX_Spectrum_Screen_Address_Calculator.Form1.resources
+c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Debug\ZX_Spectrum_Screen_Address_Calculator.Properties.Resources.resources
+c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Debug\ZX Spectrum Screen Address Calculator.csproj.GenerateResource.Cache
+c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Debug\ZX Spectrum Screen Address Calculator.exe
+c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Debug\ZX Spectrum Screen Address Calculator.pdb

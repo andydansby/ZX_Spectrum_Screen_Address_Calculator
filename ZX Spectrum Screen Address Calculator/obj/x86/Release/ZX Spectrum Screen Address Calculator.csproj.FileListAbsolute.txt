@@ -5,3 +5,4 @@ c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address 
 c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.csproj.GenerateResource.Cache
 c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.exe
 c:\users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.pdb
+C:\Users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.csprojResolveAssemblyReference.cache

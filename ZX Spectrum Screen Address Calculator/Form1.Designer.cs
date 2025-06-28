@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.X_Position_decimal = new System.Windows.Forms.NumericUpDown();
@@ -59,6 +60,22 @@
             this.label16 = new System.Windows.Forms.Label();
             this.attributeDec = new System.Windows.Forms.TextBox();
             this.attributeHex = new System.Windows.Forms.TextBox();
+            this.Ink_Color = new System.Windows.Forms.Button();
+            this.Paper_Color = new System.Windows.Forms.Button();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.Ink_Selection = new System.Windows.Forms.ListBox();
+            this.Paper_Selection = new System.Windows.Forms.ListBox();
+            this.bright_on = new System.Windows.Forms.CheckBox();
+            this.flash_on = new System.Windows.Forms.CheckBox();
+            this.Output_Color = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.attribute_out_BIN = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.attribute_out_DEC = new System.Windows.Forms.TextBox();
+            this.attribute_out_HEX = new System.Windows.Forms.TextBox();
+            this.label21 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.X_Position_decimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Y_Position_decimal)).BeginInit();
             this.SuspendLayout();
@@ -351,11 +368,187 @@
             this.attributeHex.TabIndex = 31;
             this.attributeHex.Text = "0";
             // 
+            // Ink_Color
+            // 
+            this.Ink_Color.Location = new System.Drawing.Point(213, 253);
+            this.Ink_Color.Name = "Ink_Color";
+            this.Ink_Color.Size = new System.Drawing.Size(68, 21);
+            this.Ink_Color.TabIndex = 32;
+            this.Ink_Color.Text = "INK";
+            this.Ink_Color.UseVisualStyleBackColor = true;
+            // 
+            // Paper_Color
+            // 
+            this.Paper_Color.Location = new System.Drawing.Point(130, 253);
+            this.Paper_Color.Name = "Paper_Color";
+            this.Paper_Color.Size = new System.Drawing.Size(68, 21);
+            this.Paper_Color.TabIndex = 33;
+            this.Paper_Color.Text = "PAPER";
+            this.Paper_Color.UseVisualStyleBackColor = true;
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(214, 235);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(22, 13);
+            this.label17.TabIndex = 34;
+            this.label17.Text = "Ink";
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(127, 235);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(35, 13);
+            this.label18.TabIndex = 35;
+            this.label18.Text = "Paper";
+            // 
+            // Ink_Selection
+            // 
+            this.Ink_Selection.FormattingEnabled = true;
+            this.Ink_Selection.Items.AddRange(new object[] {
+            "Black",
+            "Blue",
+            "Red",
+            "Magenta",
+            "Green",
+            "Cyan",
+            "Yellow",
+            "White"});
+            this.Ink_Selection.Location = new System.Drawing.Point(213, 280);
+            this.Ink_Selection.Name = "Ink_Selection";
+            this.Ink_Selection.Size = new System.Drawing.Size(68, 108);
+            this.Ink_Selection.TabIndex = 36;
+            this.Ink_Selection.SelectedIndexChanged += new System.EventHandler(this.Ink_Selection_SelectedIndexChanged);
+            // 
+            // Paper_Selection
+            // 
+            this.Paper_Selection.FormattingEnabled = true;
+            this.Paper_Selection.Items.AddRange(new object[] {
+            "Black",
+            "Blue",
+            "Red",
+            "Magenta",
+            "Green",
+            "Cyan",
+            "Yellow",
+            "White"});
+            this.Paper_Selection.Location = new System.Drawing.Point(130, 280);
+            this.Paper_Selection.Name = "Paper_Selection";
+            this.Paper_Selection.Size = new System.Drawing.Size(68, 108);
+            this.Paper_Selection.TabIndex = 37;
+            this.Paper_Selection.SelectedIndexChanged += new System.EventHandler(this.Paper_Selection_SelectedIndexChanged);
+            // 
+            // bright_on
+            // 
+            this.bright_on.AutoSize = true;
+            this.bright_on.Location = new System.Drawing.Point(68, 253);
+            this.bright_on.Name = "bright_on";
+            this.bright_on.Size = new System.Drawing.Size(53, 17);
+            this.bright_on.TabIndex = 40;
+            this.bright_on.Text = "Bright";
+            this.bright_on.UseVisualStyleBackColor = true;
+            this.bright_on.CheckedChanged += new System.EventHandler(this.bright_on_CheckedChanged);
+            // 
+            // flash_on
+            // 
+            this.flash_on.AutoSize = true;
+            this.flash_on.Location = new System.Drawing.Point(12, 253);
+            this.flash_on.Name = "flash_on";
+            this.flash_on.Size = new System.Drawing.Size(51, 17);
+            this.flash_on.TabIndex = 41;
+            this.flash_on.Text = "Flash";
+            this.flash_on.UseVisualStyleBackColor = true;
+            this.flash_on.CheckedChanged += new System.EventHandler(this.flash_on_CheckedChanged);
+            // 
+            // Output_Color
+            // 
+            this.Output_Color.Location = new System.Drawing.Point(304, 253);
+            this.Output_Color.Name = "Output_Color";
+            this.Output_Color.Size = new System.Drawing.Size(68, 21);
+            this.Output_Color.TabIndex = 42;
+            this.Output_Color.Text = "OUTPUT";
+            this.Output_Color.UseVisualStyleBackColor = true;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 500;
+            // 
+            // attribute_out_BIN
+            // 
+            this.attribute_out_BIN.Location = new System.Drawing.Point(10, 289);
+            this.attribute_out_BIN.Name = "attribute_out_BIN";
+            this.attribute_out_BIN.ReadOnly = true;
+            this.attribute_out_BIN.Size = new System.Drawing.Size(56, 20);
+            this.attribute_out_BIN.TabIndex = 43;
+            this.attribute_out_BIN.Text = "00111000";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(9, 273);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(63, 13);
+            this.label19.TabIndex = 44;
+            this.label19.Text = "Color Binary";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(6, 352);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(72, 13);
+            this.label20.TabIndex = 45;
+            this.label20.Text = "Color Decimal";
+            // 
+            // attribute_out_DEC
+            // 
+            this.attribute_out_DEC.Location = new System.Drawing.Point(10, 368);
+            this.attribute_out_DEC.Name = "attribute_out_DEC";
+            this.attribute_out_DEC.ReadOnly = true;
+            this.attribute_out_DEC.Size = new System.Drawing.Size(56, 20);
+            this.attribute_out_DEC.TabIndex = 46;
+            this.attribute_out_DEC.Text = "56";
+            // 
+            // attribute_out_HEX
+            // 
+            this.attribute_out_HEX.Location = new System.Drawing.Point(10, 329);
+            this.attribute_out_HEX.Name = "attribute_out_HEX";
+            this.attribute_out_HEX.ReadOnly = true;
+            this.attribute_out_HEX.Size = new System.Drawing.Size(56, 20);
+            this.attribute_out_HEX.TabIndex = 48;
+            this.attribute_out_HEX.Text = "#38";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Location = new System.Drawing.Point(9, 313);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(53, 13);
+            this.label21.TabIndex = 47;
+            this.label21.Text = "Color Hex";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(496, 371);
+            this.ClientSize = new System.Drawing.Size(496, 469);
+            this.Controls.Add(this.attribute_out_HEX);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.attribute_out_DEC);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.attribute_out_BIN);
+            this.Controls.Add(this.Output_Color);
+            this.Controls.Add(this.flash_on);
+            this.Controls.Add(this.bright_on);
+            this.Controls.Add(this.Paper_Selection);
+            this.Controls.Add(this.Ink_Selection);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.Paper_Color);
+            this.Controls.Add(this.Ink_Color);
             this.Controls.Add(this.attributeHex);
             this.Controls.Add(this.attributeDec);
             this.Controls.Add(this.label16);
@@ -388,7 +581,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "ZX Spectrum Display Calculator 0.2";
+            this.Text = "ZX Spectrum Display Calculator 0.3";
             ((System.ComponentModel.ISupportInitialize)(this.X_Position_decimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Y_Position_decimal)).EndInit();
             this.ResumeLayout(false);
@@ -429,6 +622,22 @@
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.TextBox attributeDec;
         private System.Windows.Forms.TextBox attributeHex;
+        private System.Windows.Forms.Button Ink_Color;
+        private System.Windows.Forms.Button Paper_Color;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.ListBox Ink_Selection;
+        private System.Windows.Forms.ListBox Paper_Selection;
+        internal System.Windows.Forms.CheckBox flash_on;
+        private System.Windows.Forms.Button Output_Color;
+        internal System.Windows.Forms.CheckBox bright_on;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.TextBox attribute_out_BIN;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.TextBox attribute_out_DEC;
+        private System.Windows.Forms.TextBox attribute_out_HEX;
+        private System.Windows.Forms.Label label21;
     }
 }
 

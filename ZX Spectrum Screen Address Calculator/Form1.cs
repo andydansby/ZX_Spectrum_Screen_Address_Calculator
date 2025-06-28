@@ -144,8 +144,6 @@ namespace ZX_Spectrum_Screen_Address_Calculator
             attributeHex.Text = "#" + attrAddr.ToString("X2");
         }
 
-        //https://lospec.com/palette-list/zx-spectrum
-
         //https://en.wikipedia.org/wiki/ZX_Spectrum_graphic_modes
 
 
@@ -238,7 +236,7 @@ namespace ZX_Spectrum_Screen_Address_Calculator
             if (bright_on.Checked == false && Ink_Selection.SelectedItem.ToString() == "Green")
             {
                 Ink_Color.BackColor = System.Drawing.ColorTranslator.FromHtml("#00CF15");
-                Ink_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+                Ink_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#000000");
                 Output_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#00CF15");
                 Globals.inkBits = 4;
                 Globals.brightBit = 0;
@@ -247,7 +245,7 @@ namespace ZX_Spectrum_Screen_Address_Calculator
             if (bright_on.Checked == true && Ink_Selection.SelectedItem.ToString() == "Green")
             {
                 Ink_Color.BackColor = System.Drawing.ColorTranslator.FromHtml("#00FF1C");
-                Ink_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+                Ink_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#000000");
                 Output_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#00FF1C");
                 Globals.inkBits = 4;
                 Globals.brightBit = 64;
@@ -392,7 +390,7 @@ namespace ZX_Spectrum_Screen_Address_Calculator
             if (bright_on.Checked == false && Paper_Selection.SelectedItem.ToString() == "Green")
             {
                 Paper_Color.BackColor = System.Drawing.ColorTranslator.FromHtml("#00CF15");
-                Paper_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+                Paper_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#000000");
                 Output_Color.BackColor = System.Drawing.ColorTranslator.FromHtml("#00CF15");
                 Globals.paperBits = 32;
                 Globals.brightBit = 0;
@@ -401,7 +399,7 @@ namespace ZX_Spectrum_Screen_Address_Calculator
             if (bright_on.Checked == true && Paper_Selection.SelectedItem.ToString() == "Green")
             {
                 Paper_Color.BackColor = System.Drawing.ColorTranslator.FromHtml("#00FF1C");
-                Paper_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#ffffff");
+                Paper_Color.ForeColor = System.Drawing.ColorTranslator.FromHtml("#000000");
                 Output_Color.BackColor = System.Drawing.ColorTranslator.FromHtml("#00FF1C");
                 Globals.paperBits = 32;
                 Globals.brightBit = 64;
@@ -556,6 +554,11 @@ namespace ZX_Spectrum_Screen_Address_Calculator
                     Output_Color.ForeColor = originalInk;
                 }
             }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Open Source Calculator for the ZX Spectrum" + "\n" + "to calculate the Screen address and Attribute mask" + "\n" + "Written by: Andy Dansby" + "\n\n" + "source available at" + "\n" + "github.com/andydansby/ZX_Spectrum_Screen_Address_Calculator");
         }
 
 

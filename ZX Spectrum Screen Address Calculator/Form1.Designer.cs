@@ -76,6 +76,7 @@
             this.attribute_out_DEC = new System.Windows.Forms.TextBox();
             this.attribute_out_HEX = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
+            this.button1 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.X_Position_decimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Y_Position_decimal)).BeginInit();
             this.SuspendLayout();
@@ -529,11 +530,22 @@
             this.label21.TabIndex = 47;
             this.label21.Text = "Color Hex";
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(437, 12);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(47, 23);
+            this.button1.TabIndex = 49;
+            this.button1.Text = "About";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 469);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.attribute_out_HEX);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.attribute_out_DEC);
@@ -581,7 +593,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "ZX Spectrum Display Calculator 0.3";
+            this.Text = "ZX Spectrum Display Calculator 0.31";
             ((System.ComponentModel.ISupportInitialize)(this.X_Position_decimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Y_Position_decimal)).EndInit();
             this.ResumeLayout(false);
@@ -638,6 +650,7 @@
         private System.Windows.Forms.TextBox attribute_out_DEC;
         private System.Windows.Forms.TextBox attribute_out_HEX;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Button button1;
     }
 }
 

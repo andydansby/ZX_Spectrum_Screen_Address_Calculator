@@ -147,6 +147,28 @@ namespace ZX_Spectrum_Screen_Address_Calculator
         //https://en.wikipedia.org/wiki/ZX_Spectrum_graphic_modes
 
 
+/*
+F	B	P2	P1	P0	I2	I1	I0
+INK
+Black 0		000000 = 0
+Blue 1		000001 = 1
+Red 2		000010 = 2
+Magenta 3	000011 = 3
+Green 4		000100 = 4
+Cyan  5		000101 = 5
+Yellow 6	000110 = 6
+White 7		000111 = 7
+
+PAPER
+Black 0		000000 = 0 
+Blue 1		001000 = 8
+Red 2		010000 = 16
+Magenta 3	011000 = 24
+Green 4		100000 = 32
+Cyan  5		101000 = 40
+Yellow 6	110000 = 48
+White 7		111000 = 56
+*/
 
 
         /// <summary>
@@ -501,7 +523,8 @@ namespace ZX_Spectrum_Screen_Address_Calculator
             string binaryMask = Convert.ToString(outputBits, 2).PadLeft(8, '0');
             attribute_out_BIN.Text = binaryMask;
 
-
+            //convert it to Octal
+            attribute_out_OCT.Text = "0x" + Convert.ToString(outputBits, 8);
 
             // Display the result in textbox
             //output decimal

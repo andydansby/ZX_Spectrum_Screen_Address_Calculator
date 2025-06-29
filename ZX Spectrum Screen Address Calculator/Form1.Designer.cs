@@ -77,6 +77,8 @@
             this.attribute_out_HEX = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
+            this.attribute_out_OCT = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.X_Position_decimal)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Y_Position_decimal)).BeginInit();
             this.SuspendLayout();
@@ -254,7 +256,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(12, 222);
+            this.label10.Location = new System.Drawing.Point(12, 214);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(469, 13);
             this.label10.TabIndex = 19;
@@ -371,7 +373,7 @@
             // 
             // Ink_Color
             // 
-            this.Ink_Color.Location = new System.Drawing.Point(213, 253);
+            this.Ink_Color.Location = new System.Drawing.Point(213, 273);
             this.Ink_Color.Name = "Ink_Color";
             this.Ink_Color.Size = new System.Drawing.Size(68, 21);
             this.Ink_Color.TabIndex = 32;
@@ -380,7 +382,7 @@
             // 
             // Paper_Color
             // 
-            this.Paper_Color.Location = new System.Drawing.Point(130, 253);
+            this.Paper_Color.Location = new System.Drawing.Point(130, 273);
             this.Paper_Color.Name = "Paper_Color";
             this.Paper_Color.Size = new System.Drawing.Size(68, 21);
             this.Paper_Color.TabIndex = 33;
@@ -390,7 +392,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(214, 235);
+            this.label17.Location = new System.Drawing.Point(214, 254);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(22, 13);
             this.label17.TabIndex = 34;
@@ -399,7 +401,7 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(127, 235);
+            this.label18.Location = new System.Drawing.Point(130, 254);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(35, 13);
             this.label18.TabIndex = 35;
@@ -417,7 +419,7 @@
             "Cyan",
             "Yellow",
             "White"});
-            this.Ink_Selection.Location = new System.Drawing.Point(213, 280);
+            this.Ink_Selection.Location = new System.Drawing.Point(213, 313);
             this.Ink_Selection.Name = "Ink_Selection";
             this.Ink_Selection.Size = new System.Drawing.Size(68, 108);
             this.Ink_Selection.TabIndex = 36;
@@ -435,7 +437,7 @@
             "Cyan",
             "Yellow",
             "White"});
-            this.Paper_Selection.Location = new System.Drawing.Point(130, 280);
+            this.Paper_Selection.Location = new System.Drawing.Point(130, 313);
             this.Paper_Selection.Name = "Paper_Selection";
             this.Paper_Selection.Size = new System.Drawing.Size(68, 108);
             this.Paper_Selection.TabIndex = 37;
@@ -444,7 +446,7 @@
             // bright_on
             // 
             this.bright_on.AutoSize = true;
-            this.bright_on.Location = new System.Drawing.Point(68, 253);
+            this.bright_on.Location = new System.Drawing.Point(71, 253);
             this.bright_on.Name = "bright_on";
             this.bright_on.Size = new System.Drawing.Size(53, 17);
             this.bright_on.TabIndex = 40;
@@ -465,11 +467,11 @@
             // 
             // Output_Color
             // 
-            this.Output_Color.Location = new System.Drawing.Point(304, 253);
+            this.Output_Color.Location = new System.Drawing.Point(133, 230);
             this.Output_Color.Name = "Output_Color";
-            this.Output_Color.Size = new System.Drawing.Size(68, 21);
+            this.Output_Color.Size = new System.Drawing.Size(148, 21);
             this.Output_Color.TabIndex = 42;
-            this.Output_Color.Text = "OUTPUT";
+            this.Output_Color.Text = "OUTPUT Color";
             this.Output_Color.UseVisualStyleBackColor = true;
             // 
             // timer1
@@ -497,7 +499,7 @@
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(6, 352);
+            this.label20.Location = new System.Drawing.Point(6, 393);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(72, 13);
             this.label20.TabIndex = 45;
@@ -505,7 +507,7 @@
             // 
             // attribute_out_DEC
             // 
-            this.attribute_out_DEC.Location = new System.Drawing.Point(10, 368);
+            this.attribute_out_DEC.Location = new System.Drawing.Point(10, 412);
             this.attribute_out_DEC.Name = "attribute_out_DEC";
             this.attribute_out_DEC.ReadOnly = true;
             this.attribute_out_DEC.Size = new System.Drawing.Size(56, 20);
@@ -540,11 +542,31 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // attribute_out_OCT
+            // 
+            this.attribute_out_OCT.Location = new System.Drawing.Point(10, 369);
+            this.attribute_out_OCT.Name = "attribute_out_OCT";
+            this.attribute_out_OCT.ReadOnly = true;
+            this.attribute_out_OCT.Size = new System.Drawing.Size(56, 20);
+            this.attribute_out_OCT.TabIndex = 51;
+            this.attribute_out_OCT.Text = "0x70";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Location = new System.Drawing.Point(6, 353);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(59, 13);
+            this.label22.TabIndex = 50;
+            this.label22.Text = "Color Octal";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(496, 469);
+            this.Controls.Add(this.attribute_out_OCT);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.attribute_out_HEX);
             this.Controls.Add(this.label21);
@@ -593,7 +615,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "ZX Spectrum Display Calculator 0.31";
+            this.Text = "ZX Spectrum Display Calculator 0.32";
             ((System.ComponentModel.ISupportInitialize)(this.X_Position_decimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Y_Position_decimal)).EndInit();
             this.ResumeLayout(false);
@@ -651,6 +673,8 @@
         private System.Windows.Forms.TextBox attribute_out_HEX;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.TextBox attribute_out_OCT;
+        private System.Windows.Forms.Label label22;
     }
 }
 

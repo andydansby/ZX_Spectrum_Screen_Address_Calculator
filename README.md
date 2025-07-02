@@ -22,4 +22,4 @@ Now will calculate a block of addresses depending on the character position alon
 .45 
 GUI changes to make things more compact
 
-.46 Bug changes to correct pixel block
+.46 Bug fixes to correct pixel block

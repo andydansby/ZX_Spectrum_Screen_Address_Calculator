@@ -1,7 +1,7 @@
-C:\Users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\bin\Release\ZX Spectrum Screen Address Calculator.exe
-C:\Users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\bin\Release\ZX Spectrum Screen Address Calculator.pdb
-C:\Users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX_Spectrum_Screen_Address_Calculator.Form1.resources
-C:\Users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX_Spectrum_Screen_Address_Calculator.Properties.Resources.resources
-C:\Users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.csproj.GenerateResource.Cache
-C:\Users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.exe
-C:\Users\andyd\documents\visual studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.pdb
+C:\Users\andyd\Documents\Visual Studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\bin\Release\ZX Spectrum Screen Address Calculator.exe
+C:\Users\andyd\Documents\Visual Studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\bin\Release\ZX Spectrum Screen Address Calculator.pdb
+C:\Users\andyd\Documents\Visual Studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX_Spectrum_Screen_Address_Calculator.Form1.resources
+C:\Users\andyd\Documents\Visual Studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX_Spectrum_Screen_Address_Calculator.Properties.Resources.resources
+C:\Users\andyd\Documents\Visual Studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.csproj.GenerateResource.Cache
+C:\Users\andyd\Documents\Visual Studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.exe
+C:\Users\andyd\Documents\Visual Studio 2010\Projects\ZX Spectrum Screen Address Calculator\ZX Spectrum Screen Address Calculator\obj\x86\Release\ZX Spectrum Screen Address Calculator.pdb

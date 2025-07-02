@@ -32,6 +32,12 @@ namespace ZX_Spectrum_Screen_Address_Calculator
         }
 
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Open Source Calculator for the ZX Spectrum" + "\n" + "to calculate the Screen address and Attribute mask" + "\n" + "Written by: Andy Dansby" + "\n\n" + "source available at" + "\n" + "github.com/andydansby/ZX_Spectrum_Screen_Address_Calculator");
+        }
+
+
     /// <summary>
     /// Calculator
     /// </summary>
@@ -579,10 +585,140 @@ White 7		111000 = 56
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        /// <summary>
+        /// Calculator 2
+        /// </summary>
+        /// <param name="x"></param>
+        /// <param name="y"></param>
+        /// <param name="address"></param>
+        /// <param name="bitMask"></param>
+        private int characterAttributeAddress(int x, int y)
         {
-            MessageBox.Show("Open Source Calculator for the ZX Spectrum" + "\n" + "to calculate the Screen address and Attribute mask" + "\n" + "Written by: Andy Dansby" + "\n\n" + "source available at" + "\n" + "github.com/andydansby/ZX_Spectrum_Screen_Address_Calculator");
+            return 0x5800 + y * 32 + x;
         }
+
+
+
+
+        public static ushort GetScreenAddress(int charX, int charY)
+        {
+            int pixelX = charX * 8;
+            int pixelY = charY * 8;
+
+            // Start of screen memory
+            int address = 0x4000;
+
+            // ZX Spectrum screen address layout:
+            // Bits 13-11: row block (rows 0–7, 8–15, etc.)
+            // Bits 10-8:  line within block (0–7)
+            // Bits 7-5:   character row within block (0–7)
+            // Bits 4-0:   column (0–31)
+
+            address |= (pixelY & 0xC0) << 5;  // bits 7-6 (row block)
+            address |= (pixelY & 0x07) << 8;  // bits 2-0 (line within 8-line character block)
+            address |= (pixelY & 0x38) << 2;  // bits 5-3 (character row within block)
+            address |= pixelX >> 3;          // column (0–31)
+
+            return (ushort)address;
+        }
+
+        private void Char_address_X_ValueChanged(object sender, EventArgs e)
+        {
+            int address = (int)Char_address_X.Value;
+            int x = (int)Char_address_X.Value;
+            int y = (int)Char_address_Y.Value;
+
+            //convert it to hex
+            Char_address_X_HEX.Text = "#" + address.ToString("X2");
+
+            //calculate attribute address
+            int output = characterAttributeAddress(x, y);
+            char_attribute_address.Text = output.ToString();
+
+            //convert address to HEX
+            char_attribute_address_HEX.Text = "#" + output.ToString("X4");
+            
+            //calculate addresses
+            int address1 = GetScreenAddress(x, y);
+            int address2 = GetScreenAddress(x, y + 1);
+            int address3 = GetScreenAddress(x, y + 2);
+            int address4 = GetScreenAddress(x, y + 3);
+            int address5 = GetScreenAddress(x, y + 4);
+            int address6 = GetScreenAddress(x, y + 5);
+            int address7 = GetScreenAddress(x, y + 6);
+            int address8 = GetScreenAddress(x, y + 7);
+
+            //print address as decimal number
+            pixel_address_block.Clear();
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address1));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address2));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address3));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address4));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address5));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address6));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address7));
+            pixel_address_block.AppendText(string.Format("{0}\r", address8));
+            //convert address to HEX
+            pixel_address_block_HEX.Clear();
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address1));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address2));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address3));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address4));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address5));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address6));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address7));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r", address8));
+        }
+
+        private void Char_address_Y_ValueChanged(object sender, EventArgs e)
+        {
+            int address = (int)Char_address_Y.Value;
+            int x = (int)Char_address_X.Value;
+            int y = (int)Char_address_Y.Value;
+
+            //convert it to hex
+            Char_address_Y_HEX.Text = "#" + address.ToString("X2");
+
+            //calculate attribute address
+            int output = characterAttributeAddress(x, y);
+            char_attribute_address.Text = output.ToString();
+
+            //convert address to HEX
+            char_attribute_address_HEX.Text = "#" + output.ToString("X4");
+
+            //calculate addresses
+            int address1 = GetScreenAddress(x, y);
+            int address2 = GetScreenAddress(x, y + 1);
+            int address3 = GetScreenAddress(x, y + 2);
+            int address4 = GetScreenAddress(x, y + 3);
+            int address5 = GetScreenAddress(x, y + 4);
+            int address6 = GetScreenAddress(x, y + 5);
+            int address7 = GetScreenAddress(x, y + 6);
+            int address8 = GetScreenAddress(x, y + 7);
+
+            //print address as decimal number
+            pixel_address_block.Clear();
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address1));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address2));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address3));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address4));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address5));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address6));
+            pixel_address_block.AppendText(string.Format("{0}\r\n", address7));
+            pixel_address_block.AppendText(string.Format("{0}\r", address8));
+            //convert address to HEX
+            pixel_address_block_HEX.Clear();
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address1));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address2));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address3));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address4));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address5));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address6));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r\n", address7));
+            pixel_address_block_HEX.AppendText(string.Format("#{0:X4}\r", address8));
+        }
+
+
 
 
 

@@ -598,9 +598,66 @@ White 7		111000 = 56
         }
 
 
+        /*
+        private void GetScreenAddressAndBit(int x, int y, out ushort address, out byte bitMask)
+        {
+            int baseAddress = 0x4000;
+            int row = (y & 0xC0) << 5;
+            int line = (y & 0x07) << 8;
+            int block = (y & 0x38) << 2;
+            int column = x >> 3;
 
+            address = (ushort)(baseAddress + row + line + block + column);
+            bitMask = (byte)(1 << (7 - (x & 0x07)));
+        }
+        */
 
-        public static ushort GetScreenAddress(int charX, int charY)
+        public static int GetScreenAddress(int pixelX, int pixelY)
+        {
+            // ZX Spectrum screen address layout:
+            // Bits 13-11: row block (rows 0–7, 8–15, etc.)
+            // Bits 10-8:  line within block (0–7)
+            // Bits 7-5:   character row within block (0–7)
+            // Bits 4-0:   column (0–31)
+            //int pixelX = charX * 8;
+            //int pixelY = charY * 8;
+
+            // Start of screen memory
+            int baseAddress = 0x4000;
+            int row = (pixelY & 0xC0) << 5;
+            int line = (pixelY & 0x07) << 8;
+            int block = (pixelY & 0x38) << 2;
+            int column = pixelX >> 3;
+
+            ushort address = (ushort)(baseAddress + row + line + block + column);
+
+            return address;
+        }
+
+        /*
+        public static int GetScreenAddress(int charX, int charY)
+        {
+            // ZX Spectrum screen address layout:
+            // Bits 13-11: row block (rows 0–7, 8–15, etc.)
+            // Bits 10-8:  line within block (0–7)
+            // Bits 7-5:   character row within block (0–7)
+            // Bits 4-0:   column (0–31)
+            int pixelX = charX * 8;
+            int pixelY = charY * 8;
+
+            // Start of screen memory
+            int baseAddress = 0x4000;
+            int row = (pixelY & 0xC0) << 5;
+            int line = (pixelY & 0x07) << 8;
+            int block = (pixelY & 0x38) << 2;
+            int column = pixelX >> 3;
+
+            ushort address = (ushort)(baseAddress + row + line + block + column);
+
+            return address;
+        }*/
+
+        /*public static int GetScreenAddress(int charX, int charY)
         {
             int pixelX = charX * 8;
             int pixelY = charY * 8;
@@ -619,34 +676,38 @@ White 7		111000 = 56
             address |= (pixelY & 0x38) << 2;  // bits 5-3 (character row within block)
             address |= pixelX >> 3;          // column (0–31)
 
-            return (ushort)address;
-        }
+            return address;
+        }*/
 
         private void Char_address_X_ValueChanged(object sender, EventArgs e)
         {
             int address = (int)Char_address_X.Value;
-            int x = (int)Char_address_X.Value;
-            int y = (int)Char_address_Y.Value;
+            int pixel_X = (int)Char_address_X.Value * 8;
+            int pixel_Y = (int)Char_address_Y.Value * 8;
+            int charX = (int)Char_address_X.Value;
+            int charY = (int)Char_address_Y.Value;
 
             //convert it to hex
             Char_address_X_HEX.Text = "#" + address.ToString("X2");
 
             //calculate attribute address
-            int output = characterAttributeAddress(x, y);
+            //to fix
+            int output = characterAttributeAddress(charX, charY);
             char_attribute_address.Text = output.ToString();
 
             //convert address to HEX
+            //to fix
             char_attribute_address_HEX.Text = "#" + output.ToString("X4");
             
             //calculate addresses
-            int address1 = GetScreenAddress(x, y);
-            int address2 = GetScreenAddress(x, y + 1);
-            int address3 = GetScreenAddress(x, y + 2);
-            int address4 = GetScreenAddress(x, y + 3);
-            int address5 = GetScreenAddress(x, y + 4);
-            int address6 = GetScreenAddress(x, y + 5);
-            int address7 = GetScreenAddress(x, y + 6);
-            int address8 = GetScreenAddress(x, y + 7);
+            int address1 = GetScreenAddress(pixel_X, pixel_Y);
+            int address2 = GetScreenAddress(pixel_X, pixel_Y + 1);
+            int address3 = GetScreenAddress(pixel_X, pixel_Y + 2);
+            int address4 = GetScreenAddress(pixel_X, pixel_Y + 3);
+            int address5 = GetScreenAddress(pixel_X, pixel_Y + 4);
+            int address6 = GetScreenAddress(pixel_X, pixel_Y + 5);
+            int address7 = GetScreenAddress(pixel_X, pixel_Y + 6);
+            int address8 = GetScreenAddress(pixel_X, pixel_Y + 7);
 
             //print address as decimal number
             pixel_address_block.Clear();
@@ -673,28 +734,30 @@ White 7		111000 = 56
         private void Char_address_Y_ValueChanged(object sender, EventArgs e)
         {
             int address = (int)Char_address_Y.Value;
-            int x = (int)Char_address_X.Value;
-            int y = (int)Char_address_Y.Value;
+            int pixel_X = (int)Char_address_X.Value * 8;
+            int pixel_Y = (int)Char_address_Y.Value * 8;
+            int charX = (int)Char_address_X.Value;
+            int charY = (int)Char_address_Y.Value;
 
             //convert it to hex
             Char_address_Y_HEX.Text = "#" + address.ToString("X2");
 
             //calculate attribute address
-            int output = characterAttributeAddress(x, y);
+            int output = characterAttributeAddress(charX, charY);
             char_attribute_address.Text = output.ToString();
 
             //convert address to HEX
             char_attribute_address_HEX.Text = "#" + output.ToString("X4");
 
             //calculate addresses
-            int address1 = GetScreenAddress(x, y);
-            int address2 = GetScreenAddress(x, y + 1);
-            int address3 = GetScreenAddress(x, y + 2);
-            int address4 = GetScreenAddress(x, y + 3);
-            int address5 = GetScreenAddress(x, y + 4);
-            int address6 = GetScreenAddress(x, y + 5);
-            int address7 = GetScreenAddress(x, y + 6);
-            int address8 = GetScreenAddress(x, y + 7);
+            int address1 = GetScreenAddress(pixel_X, pixel_Y);
+            int address2 = GetScreenAddress(pixel_X, pixel_Y + 1);
+            int address3 = GetScreenAddress(pixel_X, pixel_Y + 2);
+            int address4 = GetScreenAddress(pixel_X, pixel_Y + 3);
+            int address5 = GetScreenAddress(pixel_X, pixel_Y + 4);
+            int address6 = GetScreenAddress(pixel_X, pixel_Y + 5);
+            int address7 = GetScreenAddress(pixel_X, pixel_Y + 6);
+            int address8 = GetScreenAddress(pixel_X, pixel_Y + 7);
 
             //print address as decimal number
             pixel_address_block.Clear();

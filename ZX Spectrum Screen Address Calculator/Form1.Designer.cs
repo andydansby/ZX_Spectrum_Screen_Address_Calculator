@@ -815,7 +815,7 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
-            this.Text = "ZX Spectrum Display Calculator 0.45";
+            this.Text = "ZX Spectrum Display Calculator 0.46";
             ((System.ComponentModel.ISupportInitialize)(this.X_Position_decimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Y_Position_decimal)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Char_address_X)).EndInit();
